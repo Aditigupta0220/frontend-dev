@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive YouTube (percent-based)</title>
+  <style>
+    /* Make sure percentage heights work (parent must have a height) */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Container sized using percentages only */
+    .video-wrap {
+      /* width and height expressed as percentages of the parent (body) */
+      width: 80%;    /* 80% of the viewport width */
+      height: 50%;   /* 50% of the viewport height */
+      max-width: 100%;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      background: #000;
+      position: relative;
+    }
+
+    /* The iframe fills the container using percentage values */
+    .video-wrap iframe {
+      width: 100%;   /* percentage */
+      height: 100%;  /* percentage */
+      border: 0;
+      display: block;
+    }
+
+    /* Optional: make the container responsive on very tall/narrow screens */
+    @media (max-aspect-ratio: 3/4) {
+      .video-wrap { width: 95%; height: 40%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video-wrap" aria-label="YouTube video">
+    <!-- Replace the src with any YouTube video ID you want -->
+    <iframe
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+</body>
+</html>

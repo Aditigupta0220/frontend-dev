@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frameset Example - Single File</title>
+</head>
+
+<!-- Divide window into top (30%) and bottom (70%) -->
+<frameset rows="30%,70%">
+  
+  <!-- Top frame with navigation links -->
+  <frame name="topFrame" srcdoc="
+    <html>
+      <body>
+        <h2>Navigation Links</h2>
+        <a href='home' target='bottomFrame'>Home</a> |
+        <a href='about' target='bottomFrame'>About</a> |
+        <a href='contact' target='bottomFrame'>Contact</a>
+      </body>
+    </html>
+  ">
+
+  <!-- Bottom frame with welcome message -->
+  <frame name="bottomFrame" srcdoc="
+    <html>
+      <body>
+        <h2>Welcome to My Website</h2>
+      </body>
+    </html>
+  ">
+
+</frameset>
+
+<!-- Define dummy pages for navigation -->
+<noframes>
+  <body>
+    Your browser does not support frames.
+  </body>
+</noframes>
+
+<script>
+  // Simple inline pages displayed when links are clicked
+  const pages = {
+    home: "<html><body><h2>Home Page</h2><p>This is the home page content.</p></body></html>",
+    about: "<html><body><h2>About Page</h2><p>This page tells you more about us.</p></body></html>",
+    contact: "<html><body><h2>Contact Page</h2><p>Contact us at: example@email.com</p></body></html>"
+  };
+
+  // Listen for link clicks and load content dynamically
+  window.addEventListener('message', function(e) {
+    if (pages[e.data]) {
+      parent.bottomFrame.document.open();
+      parent.bottomFrame.document.write(pages[e.data]);
+      parent.bottomFrame.document.close();
+    }
+  });
+
+  // Intercept link clicks inside top frame
+  window.onload = function() {
+    const topDoc = frames['topFrame'].document;
+    topDoc.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        e.preventDefault();
+        parent.postMessage(e.target.getAttribute('href'));
+      }
+    });
+  };
+</script>
+
+</html>

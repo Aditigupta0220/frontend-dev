@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframes Example - Introduction & Hobby</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fafafa;
+    }
+    h1 {
+      color: #333;
+    }
+    iframe {
+      display: block;
+      margin: 20px auto;
+      border: 2px solid #555;
+      border-radius: 10px;
+      width: 80%;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Two Iframes Displayed One Below Another</h1>
+
+  <iframe id="intro" title="Introduction Page"></iframe>
+  <iframe id="hobby" title="Favorite Hobby Page"></iframe>
+
+  <script>
+    document.getElementById("intro").srcdoc = `
+      <!DOCTYPE html>
+      <html>
+      <body style="background-color:#e6f7ff; text-align:center; font-family:Arial;">
+        <h2>About Me</h2>
+        <p>Hello! My name is Aditi Gupta. I am passionate about technology, creativity, and learning new things.</p>
+      </body>
+      </html>
+    `;
+
+    document.getElementById("hobby").srcdoc = `
+      <!DOCTYPE html>
+      <html>
+      <body style="background-color:#fff8dc; text-align:center; font-family:Arial;">
+        <h2>My Favorite Hobby</h2>
+        <p>My favorite hobby is painting! I love creating colorful landscapes and portraits in my free time.</p>
+      </body>
+      </html>
+    `;
+  </script>
+
+</body>
+</html>

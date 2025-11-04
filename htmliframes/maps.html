@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive YouTube (percent-based)</title>
+  <style>
+    /* Make sure percentage heights work (parent must have a height) */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Container sized using percentages only */
+    .video-wrap {
+      /* width and height expressed as percentages of the parent (body) */
+      width: 80%;    /* 80% of the viewport width */
+      height: 50%;   /* 50% of the viewport height */
+      max-width: 100%;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      background: #000;
+      position: relative;
+    }
+
+    /* The iframe fills the container using percentage values */
+    .video-wrap iframe {
+      width: 100%;   /* percentage */
+      height: 100%;  /* percentage */
+      border: 0;
+      display: block;
+    }
+
+    /* Optional: make the container responsive on very tall/narrow screens */
+    @media (max-aspect-ratio: 3/4) {
+      .video-wrap { width: 95%; height: 40%; }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <!-- Embedded Google Map: shows the city (change the query in the src to your school or city) -->
+  <section style="width: 80%; margin: 1.5rem auto;">
+    <!-- The loading="lazy" attribute defers loading the iframe until it's near the viewport,
+         improving initial page load performance and reducing bandwidth for users who
+         don't scroll down to the map. -->
+    <div class="map-wrap" style="width: 100%; height: 350px; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
+      <iframe
+        title="Map of New Delhi"
+        width="100%"
+        height="100%"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=New+Delhi,+India&output=embed"
+        style="border:0; display:block;"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+</body>
+</html>

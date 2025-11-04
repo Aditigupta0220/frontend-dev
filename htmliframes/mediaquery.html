@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive 15 Boxes Grid</title>
+  <style>
+    :root{
+      --gap: 16px;
+      --card-radius: 12px;
+      --max-width: 1200px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --color1: #cce5ff;
+      --color2: #d4edda;
+      --color3: #fff3cd;
+      --color4: #f8d7da;
+      --color5: #e2e3e5;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#f7fbff,#ffffff);
+      color:#0f172a;
+      display:flex;
+      justify-content:center;
+      padding:40px 16px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+    }
+
+    header{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:20px;
+    }
+
+    h1{font-size:20px;margin:0}
+    p.lead{margin:4px 0 0;color:#334155}
+
+    
+    .grid{
+      display:grid;
+      gap:var(--gap);
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    }
+
+    .card{
+      border-radius:var(--card-radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:transform .25s cubic-bezier(.2,.9,.3,1),box-shadow .25s;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      height:160px;
+      font-weight:600;
+      font-size:18px;
+      color:#0f172a;
+    }
+
+    .card:nth-child(5n+1){background:var(--color1)}
+    .card:nth-child(5n+2){background:var(--color2)}
+    .card:nth-child(5n+3){background:var(--color3)}
+    .card:nth-child(5n+4){background:var(--color4)}
+    .card:nth-child(5n+5){background:var(--color5)}
+
+    .card:hover{
+      transform:translateY(-6px) scale(1.03);
+      box-shadow:0 12px 30px rgba(16,24,40,0.12);
+    }
+
+    @media (max-width:420px){
+      :root{--gap:12px}
+      body{padding:20px 12px}
+      h1{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Responsive 15 Boxes Grid</h1>
+        <p class="lead">A responsive grid layout with 15 colorful boxes. Resize the browser to see it adapt.</p>
+      </div>
+    </header>
+
+    <main class="grid">
+      <div class="card">Box 1</div>
+      <div class="card">Box 2</div>
+      <div class="card">Box 3</div>
+      <div class="card">Box 4</div>
+      <div class="card">Box 5</div>
+      <div class="card">Box 6</div>
+      <div class="card">Box 7</div>
+      <div class="card">Box 8</div>
+      <div class="card">Box 9</div>
+      <div class="card">Box 10</div>
+      <div class="card">Box 11</div>
+      <div class="card">Box 12</div>
+      <div class="card">Box 13</div>
+      <div class="card">Box 14</div>
+      <div class="card">Box 15</div>
+    </main>
+  </div>
+</body>
+</html>
