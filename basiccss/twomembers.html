@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .team-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      flex: 1 1 calc(33.333% - 1rem);
+      box-sizing: border-box;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    /* Highlighted card */
+    .lead {
+      background-color: #e0f7fa;
+      border: 2px solid #00796b;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 600px) {
+      .team-container {
+        flex-direction: column;
+      }
+
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Meet Our Team</h1>
+  <div class="team-container">
+    <div class="card lead">
+      <h2>Aditi Gupta</h2>
+      <h3>Team Lead</h3>
+      <p>Aditi drives the team with vision and clarity. She specializes in Java, ML, and system design.</p>
+    </div>
+    <div class="card">
+      <h2>Drishya singh</h2>
+      <h3>Frontend Developer</h3>
+      <p>Drishya crafts beautiful interfaces and ensures seamless user experiences across platforms.</p>
+    </div>
+    <div class="card">
+      <h2>Lavisha gehani</h2>
+      <h3>Backend Developer</h3>
+      <p>Lavisha builds robust APIs and manages databases with precision and performance in mind.</p>
+    </div>
+  </div>
+</body>
+</html>

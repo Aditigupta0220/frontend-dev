@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditi Gupta - Portfolio</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8; /* light background */
+      color: #1a1a1a; /* dark text for contrast */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #003366;
+      color: #ffffff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2em;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    /* Main section */
+    main {
+      flex: 1;
+      margin-top: 80px; /* space for fixed header */
+      padding: 2em;
+    }
+
+    .bio {
+      display: flex;
+      align-items: center;
+      gap: 5%;
+    }
+
+    .bio img {
+      width: 150px; /* px unit */
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .bio p {
+      font-size: 1.2rem; /* rem unit */
+      max-width: 60%;
+      line-height: 1.5em; /* em unit */
+    }
+
+    /* Footer */
+    footer {
+      background-color: #003366;
+      color: #ffffff;
+      text-align: center;
+      padding: 1em;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aditi Gupta</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="bio">
+      <img src="https://via.placeholder.com/150" alt="Profile Image" />
+      <p>Hello! I'm Aditi, a passionate developer exploring Java and machine learning. I love turning ideas into clean, modular code and visualizing systems with UML diagrams.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Aditi Gupta. All rights reserved.</p>
+  </footer>
+</body>
+</html>

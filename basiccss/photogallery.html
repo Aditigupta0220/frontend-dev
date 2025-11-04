@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .photo:hover img {
+      transform: scale(1.1);
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: center;
+    }
+
+    .photo:hover .caption {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Photo Gallery</h1>
+  <div class="gallery">
+    <div class="photo">
+      <img src="https://via.placeholder.com/400x300?text=Image+1" alt="Image 1" />
+      <div class="caption">Caption for Image 1</div>
+    </div>
+    <div class="photo">
+      <img src="https://via.placeholder.com/400x300?text=Image+2" alt="Image 2" />
+      <div class="caption">Caption for Image 2</div>
+    </div>
+    <div class="photo">
+      <img src="https://via.placeholder.com/400x300?text=Image+3" alt="Image 3" />
+      <div class="caption">Caption for Image 3</div>
+    </div>
+    <div class="photo">
+      <img src="https://via.placeholder.com/400x300?text=Image+4" alt="Image 4" />
+      <div class="caption">Caption for Image 4</div>
+    </div>
+    <div class="photo">
+      <img src="https://via.placeholder.com/400x300?text=Image+5" alt="Image 5" />
+      <div class="caption">Caption for Image 5</div>
+    </div>
+    <div class="photo">
+      <img src="https://via.placeholder.com/400x300?text=Image+6" alt="Image 6" />
+      <div class="caption">Caption for Image 6</div>
+    </div>
+  </div>
+</body>
+</html>
